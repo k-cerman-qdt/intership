@@ -1,4 +1,4 @@
-package example2;
+package org.kure.example2;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

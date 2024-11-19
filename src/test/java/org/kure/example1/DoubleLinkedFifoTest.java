@@ -1,4 +1,4 @@
-package example1;
+package org.kure.example1;
 
 
 import org.junit.jupiter.api.Test;
