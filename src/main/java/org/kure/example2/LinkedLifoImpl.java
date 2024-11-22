@@ -12,7 +12,7 @@ public class LinkedLifoImpl<T> implements LinkedLifo<T> {
 
     @Override
     public T pop() {
-        return null
+        return null;
     }
 
     @Override
@@ -36,6 +36,6 @@ public class LinkedLifoImpl<T> implements LinkedLifo<T> {
 
     @Override
     public String display() {
-        return "display me"
+        return "display me";
     }
 }
