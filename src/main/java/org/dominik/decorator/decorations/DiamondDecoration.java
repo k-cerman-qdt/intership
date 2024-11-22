@@ -8,25 +8,30 @@
  * Dissemination of this information or reproduction of this material  is strictly forbidden unless prior written permission is obtained  from Yaypay Incorporated.
  */
 
-package org.dominik.decorator;
+package org.dominik.decorator.decorations;
+
+import org.dominik.decorator.MessageDecoration;
 
 /*
  * Author : Bydzovsky Dominik
  * Date Created: 2024/11/22
  */
-public class MirrorHorizontalDecoration implements MessageDecoration {
+public class DiamondDecoration implements MessageDecoration {
     private final MessageDecoration decorated;
+    private final boolean fill;
 
-    public MirrorHorizontalDecoration(MessageDecoration decoration, MirrorMode mode) {
+    public DiamondDecoration(MessageDecoration decoration, boolean fill) {
         this.decorated = decoration;
+        this.fill = fill;
+    }
+
+    @Override
+    public String toString() {
+        return "diamond";
     }
 
     @Override
     public String decorate() {
         return ""; // todo implement
-    }
-
-    public enum MirrorMode {
-        LEFT, RIGHT, BOTH
     }
 }

@@ -45,4 +45,6 @@ public interface LinkedLifo<T> {
          * Removes all elements from the stack, making it empty.
          */
         public void clear();
+
+        String display();
 }

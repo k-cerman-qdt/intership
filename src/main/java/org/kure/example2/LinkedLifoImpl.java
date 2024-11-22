@@ -30,4 +30,9 @@ public class LinkedLifoImpl<T> implements LinkedLifo<T> {
     public void clear() {
 
     }
+
+    @Override
+    public String display() {
+        return "";
+    }
 }

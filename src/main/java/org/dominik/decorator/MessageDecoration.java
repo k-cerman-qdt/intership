@@ -15,5 +15,6 @@ package org.dominik.decorator;
  * Date Created: 2024/11/22
  */
 public interface MessageDecoration {
+    String toString();
     String decorate();
 }

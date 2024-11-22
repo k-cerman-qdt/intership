@@ -8,24 +8,28 @@
  * Dissemination of this information or reproduction of this material  is strictly forbidden unless prior written permission is obtained  from Yaypay Incorporated.
  */
 
-package org.dominik.decorator;
+package org.dominik.decorator.decorations;
+
+import org.dominik.decorator.MessageDecoration;
 
 /*
  * Author : Bydzovsky Dominik
  * Date Created: 2024/11/22
  */
-public class UnderlineMessageDecoration implements MessageDecoration {
-    private final MessageDecoration decorated;
+public class PlainTextMessageDecoration implements MessageDecoration {
+    private final String message;
 
-    public UnderlineMessageDecoration(MessageDecoration decorated) {
-        this.decorated = decorated;
+    public PlainTextMessageDecoration(String message) {
+        this.message = message;
+    }
+
+    @Override
+    public String toString() {
+        return "text";
     }
 
     @Override
     public String decorate() {
-        StringBuilder builder = new StringBuilder(decorated.decorate());
-        builder.append("\n");
-        builder.append("===="); // todo fix
-        return builder.toString();
+        return message;
     }
 }

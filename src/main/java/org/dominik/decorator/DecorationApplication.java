@@ -10,6 +10,12 @@
 
 package org.dominik.decorator;
 
+import org.dominik.decorator.decorations.PlainTextMessageDecoration;
+import org.dominik.decorator.decorations.UnderlineMessageDecoration;
+import org.dominik.decorator.decorations.UppercaseDecorator;
+import org.kure.example2.LinkedLifo;
+import org.kure.example2.LinkedLifoImpl;
+
 import java.util.Scanner;
 
 /*

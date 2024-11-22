@@ -1,5 +1,6 @@
-package org.dominik.decorator;
+package org.dominik.decorator.decorations;
 
+import org.dominik.decorator.MessageDecoration;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
