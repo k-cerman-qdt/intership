@@ -16,8 +16,8 @@ class SearchServiceImplTest {
     public void testFindYoungerThanFindsSomething() {
         List<User> users = List.of(
                 createUser("Jack", "Daniels", 20, "English", 20000),
-                createUser("Alice", "X", 80, "Spanish", 50000),
-                );
+                createUser("Alice", "X", 80, "Spanish", 50000)
+        );
         SearchService service = new SearchServiceImpl(users);
 
         List<User> foundUsers = service.findYoungerUsersThan(21);
