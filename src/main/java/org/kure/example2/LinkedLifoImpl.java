@@ -1,5 +1,9 @@
 package org.kure.example2;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.NoSuchElementException;
+
 public class LinkedLifoImpl<T> implements LinkedLifo<T> {
 
     @Override
@@ -8,7 +12,7 @@ public class LinkedLifoImpl<T> implements LinkedLifo<T> {
 
     @Override
     public T pop() {
-        return null;
+        return null
     }
 
     @Override
@@ -28,11 +32,10 @@ public class LinkedLifoImpl<T> implements LinkedLifo<T> {
 
     @Override
     public void clear() {
-
     }
 
     @Override
     public String display() {
-        return "";
+        return "display me"
     }
 }
