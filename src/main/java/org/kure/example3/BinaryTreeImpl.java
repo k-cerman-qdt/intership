@@ -17,8 +17,8 @@ public class BinaryTreeImpl<T extends Comparable<T>> implements BinaryTree<T> {
     }
 
     @Override
-    public boolean search(T key) {
-        return false;
+    public T search(T key) {
+        return null;
     }
 
     @Override

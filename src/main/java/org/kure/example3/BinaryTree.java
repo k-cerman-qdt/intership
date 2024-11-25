@@ -29,12 +29,12 @@ public interface BinaryTree<T> {
     public void delete(T key);
 
     /**
-     * Searches for a key in the binary tree.
+     * Searches for the specified key in the binary tree.
      *
-     * @param key the key to search for.
-     * @return {@code true} if the key exists in the tree, {@code false} otherwise.
+     * @param key the key to search for
+     * @return the key if it exists in the tree, or {@code null} if the key is not found
      */
-    public boolean search(T key);
+    public T search(T key);
 
     /**
      * Checks whether a key exists in the binary tree.
