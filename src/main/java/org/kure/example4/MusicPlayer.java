@@ -1,5 +1,6 @@
 package org.kure.example4;
 
+import org.kure.example4.entities.SongImpl;
 import org.kure.example4.listener.MusicPlayerEventListener;
 import org.kure.example4.shuffle.BackwardShuffler;
 import org.kure.example4.shuffle.Shuffler;
@@ -90,7 +91,7 @@ public class MusicPlayer {
         }
     }
 
-    public void addSongToPlaylist(Song song) {
+    public void addSongToPlaylist(SongImpl song) {
         playlist.add(song);
         System.out.println("Added to playlist: " + song);
     }

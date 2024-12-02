@@ -1,12 +1,27 @@
 package org.kure.example5.storage;
 
 import org.kure.example4.Song;
+import org.kure.example4.entities.SongImpl;
 import org.kure.example4.storage.MusicStorage;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * This class is responsible for storing and loading songs from a database.
+ * It uses a JDBC connection to interact with the database.
+ * Goal:
+ * Create mysql database schema to store songs.
+ * Create a connection to the database.
+ * Load songs from the database.
+ * Save songs to the database.
+ * Write unit tests for the DatabaseStorage class. (Use mocks to test the DatabaseStorage class.)
+ * Write integration tests for the DatabaseStorage class. (Use a real database to test the DatabaseStorage class.)
+ * Based on your database schema, write additional tests to cover all business logic stored in the database.
+ *
+ */
 public class DatabaseStorage implements MusicStorage {
 
     private final Connection connection;
@@ -27,7 +42,7 @@ public class DatabaseStorage implements MusicStorage {
             while (resultSet.next()) {
                 String title = resultSet.getString("title");
                 String artist = resultSet.getString("artist");
-                songs.add(new Song(title, artist,1));
+                songs.add(new SongImpl(title, artist,1));
             }
 
         } catch (SQLException e) {

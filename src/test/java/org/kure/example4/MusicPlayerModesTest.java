@@ -2,9 +2,9 @@ package org.kure.example4;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.kure.example4.entities.SongImpl;
 import org.kure.example4.storage.MusicStorage;
 
-import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -18,9 +18,9 @@ public class MusicPlayerModesTest {
         MusicStorage mockStorage = mock(MusicStorage.class);
         when(mockStorage.loadSongs()).thenReturn(
                 List.of(
-                        new Song("Song1", "Artist1", 1),
-                        new Song("Song2", "Artist2", 2),
-                        new Song("Song3", "Artist3", 3)
+                        new SongImpl("Song1", "Artist1", 1),
+                        new SongImpl("Song2", "Artist2", 2),
+                        new SongImpl("Song3", "Artist3", 3)
                 )
         );
 

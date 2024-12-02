@@ -1,6 +1,7 @@
 package org.kure.example4.storage;
 
 import org.kure.example4.Song;
+import org.kure.example4.entities.SongImpl;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ public class CsvMusicStorage implements MusicStorage {
                 String title = parts[0];
                 String artist = parts[1];
                 int duration = Integer.parseInt(parts[2]);
-                songs.add(new Song(title, artist, duration));
+                songs.add(new SongImpl(title, artist, duration));
             }
         } catch (IOException e) {
             e.printStackTrace();

@@ -2,6 +2,7 @@ package org.kure.example4;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.kure.example4.entities.SongImpl;
 import org.kure.example4.storage.MusicStorage;
 import org.mockito.Mockito;
 
@@ -11,12 +12,12 @@ import static org.mockito.Mockito.*;
 
 public class MusicPlayerListenTest {
     private MusicPlayer player;
-    private Song s1;
+    private SongImpl s1;
 
     @BeforeEach
     public void setup() {
         MusicStorage mockStorage = mock(MusicStorage.class);
-        s1 = new Song("Song1", "Artist1", 5);
+        s1 = new SongImpl("Song1", "Artist1", 5);
         when(mockStorage.loadSongs()).thenReturn(
                 List.of(s1)
         ); // Simulate a 5-second song

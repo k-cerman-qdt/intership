@@ -2,6 +2,7 @@ package org.kure.example4;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.kure.example4.entities.SongImpl;
 import org.kure.example4.listener.MusicPlayerEventListener;
 import org.kure.example4.storage.MusicStorage;
 
@@ -19,7 +20,7 @@ public class MusicPlayerEventTest {
         mockListener = mock(MusicPlayerEventListener.class);
 
         when(mockStorage.loadSongs()).thenReturn(
-                List.of(new Song("Imagine", "John Lennon", 1))
+                List.of(new SongImpl("Imagine", "John Lennon", 1))
         );
 
         player = new MusicPlayer(mockStorage);
@@ -31,7 +32,7 @@ public class MusicPlayerEventTest {
         player.playNextSong();
 
         // Verify that the onSongStarted event was triggered
-        verify(mockListener, times(1)).onSongStarted(any(Song.class));
+        verify(mockListener, times(1)).onSongStarted(any(SongImpl.class));
     }
 
     @Test

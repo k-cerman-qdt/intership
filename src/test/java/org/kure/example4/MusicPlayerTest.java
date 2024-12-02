@@ -2,6 +2,7 @@ package org.kure.example4;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.kure.example4.entities.SongImpl;
 import org.kure.example4.shuffle.ShufflerFactory;
 import org.kure.example4.shuffle.ShufflerType;
 import org.kure.example4.storage.MusicStorage;
@@ -26,9 +27,9 @@ public class MusicPlayerTest {
         // Stub the storage to return a fixed playlist
         when(mockStorage.loadSongs()).thenReturn(
                 List.of(
-                        new Song("Song1", "Artist1", 1),
-                        new Song("Song2", "Artist2", 2),
-                        new Song("Song3", "Artist3", 3)
+                        new SongImpl("Song1", "Artist1", 1),
+                        new SongImpl("Song2", "Artist2", 2),
+                        new SongImpl("Song3", "Artist3", 3)
                 )
         );
 
@@ -68,7 +69,7 @@ public class MusicPlayerTest {
     @Test
     public void testSavePlaylist() {
         // Add a new song to the playlist
-        Song newSong = new Song("NewSong", "NewArtist", 200);
+        SongImpl newSong = new SongImpl("NewSong", "NewArtist", 200);
         player.addSongToPlaylist(newSong);
 
         // Save the current playlist
