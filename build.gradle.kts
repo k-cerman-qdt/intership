@@ -10,14 +10,18 @@ repositories {
 }
 
 dependencies {
-    testImplementation(platform("org.junit:junit-bom:5.10.0"))
+    implementation("org.springframework.boot:spring-boot-starter:3.4.0")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.4.0")
+    implementation("org.hsqldb:hsqldb:2.7.4")
+    implementation("org.hibernate.orm:hibernate-core:6.6.3.Final")
+
+    testImplementation("org.springframework.boot:spring-boot-starter-test:3.4.0")
+    testImplementation(platform("org.junit:junit-bom:5.11.3"))
     testImplementation("org.junit.jupiter:junit-jupiter")
-    testImplementation("org.mockito:mockito-core:5.11.0")
+    testImplementation("org.mockito:mockito-core:5.14.2")
     testImplementation("com.mysql:mysql-connector-j:9.1.0")
-
-
-
 }
+
 
 tasks.test {
     useJUnitPlatform()
