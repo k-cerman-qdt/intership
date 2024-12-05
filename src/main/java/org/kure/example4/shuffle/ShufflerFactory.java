@@ -1,8 +1,10 @@
 package org.kure.example4.shuffle;
 
+import org.kure.example4.Song;
+
 public class ShufflerFactory {
 
-    public Shuffler createRandomizer(ShufflerType type) {
+    public Shuffler<Song> createRandomizer(ShufflerType type) {
         switch (type) {
             case BACKWARD:
                 return new BackwardShuffler();

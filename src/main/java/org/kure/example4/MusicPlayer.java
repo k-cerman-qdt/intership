@@ -1,6 +1,5 @@
 package org.kure.example4;
 
-import org.kure.example4.entities.SongImpl;
 import org.kure.example4.listener.MusicPlayerEventListener;
 import org.kure.example4.shuffle.BackwardShuffler;
 import org.kure.example4.shuffle.Shuffler;
@@ -9,18 +8,18 @@ import org.kure.example4.storage.MusicStorage;
 import java.util.*;
 
 public class MusicPlayer {
-    private final MusicStorage storage;
+    private final MusicStorage<Song> storage;
     private final LinkedList<Song> playlist;
-    private final Stack<Song> playHistory;
+    private final Deque<Song> playHistory;
     private boolean shuffleMode;
     private boolean repeatMode;
     private MusicPlayerEventListener eventListener;
-    private Shuffler shuffler;
+    private Shuffler<Song> shuffler;
 
-    public MusicPlayer(MusicStorage storage) {
+    public MusicPlayer(MusicStorage<Song> storage) {
         this.storage = storage;
         this.playlist = new LinkedList<>(storage.loadSongs());
-        this.playHistory = new Stack<>();
+        this.playHistory = new ArrayDeque<>();
         this.shuffleMode = false;
         this.repeatMode = false;
         this.shuffler = new BackwardShuffler();
@@ -30,7 +29,7 @@ public class MusicPlayer {
         this.eventListener = listener;
     }
 
-    public void setRandomizer(Shuffler shuffler) {
+    public void setRandomizer(Shuffler<Song> shuffler) {
         this.shuffler = shuffler;
     }
 
@@ -91,7 +90,7 @@ public class MusicPlayer {
         }
     }
 
-    public void addSongToPlaylist(SongImpl song) {
+    public void addSongToPlaylist(Song song) {
         playlist.add(song);
         System.out.println("Added to playlist: " + song);
     }

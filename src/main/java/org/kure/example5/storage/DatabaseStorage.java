@@ -22,7 +22,7 @@ import java.util.List;
  * Based on your database schema, write additional tests to cover all business logic stored in the database.
  *
  */
-public class DatabaseStorage implements MusicStorage {
+public class DatabaseStorage implements MusicStorage<Song> {
 
     private final Connection connection;
 

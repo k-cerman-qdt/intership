@@ -13,7 +13,7 @@ import java.util.List;
  * Simple implementation of the {@link MusicStorage} interface that uses a JPA database to store songs.
  */
 @Service
-public class JpaDatabaseStorage implements MusicStorage {
+public class JpaDatabaseStorage implements MusicStorage<Song> {
 
     private final SongRepository songRepository;
 
