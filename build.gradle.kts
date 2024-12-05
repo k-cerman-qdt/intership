@@ -15,6 +15,10 @@ dependencies {
     implementation("org.hsqldb:hsqldb:2.7.4")
     implementation("org.hibernate.orm:hibernate-core:6.6.3.Final")
 
+    implementation("org.apache.logging.log4j:log4j-api:2.24.2")
+    implementation("org.apache.logging.log4j:log4j-core:2.24.2")
+
+
     testImplementation("org.springframework.boot:spring-boot-starter-test:3.4.0")
     testImplementation(platform("org.junit:junit-bom:5.11.3"))
     testImplementation("org.junit.jupiter:junit-jupiter")
@@ -25,4 +29,5 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+    systemProperty("buildDir", layout.buildDirectory.get().asFile.absolutePath)
 }
