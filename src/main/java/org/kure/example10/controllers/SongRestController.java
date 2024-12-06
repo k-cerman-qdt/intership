@@ -21,16 +21,31 @@ public class SongRestController {
         this.songRepository = songRepository;
     }
 
+    /**
+     * curl -X POST -H "Content-Type: application/json" -d '{"title": "Song Title", "artist": "Artist Name", "duration": 300}' http://host:port/songs
+     * @param song
+     * @return
+     */
     @PostMapping
     public Song10 createSong(@RequestBody Song10 song) {
         return songRepository.save(song);
     }
 
+    /**
+     * curl -X GET http://host:port/songs
+     * @return
+     */
     @GetMapping
     public List<Song10> getAllSongs() {
         return new ArrayList<>(songRepository.findAll());
     }
 
+
+    /**
+     * curl -X GET http://host:port/songs/1
+     * @param id
+     * @return
+     */
     @GetMapping("/{id}")
     public ResponseEntity<Song10> getSongById(@PathVariable("id") Long id) {
         return songRepository.findById(id)
@@ -38,6 +53,12 @@ public class SongRestController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    /**
+     * curl -X PUT -H "Content-Type: application/json" -d '{"title": "Updated Title", "artist": "Updated Artist", "duration": 320}' http://host:port/songs/1
+     * @param id
+     * @param songDetails
+     * @return
+     */
     @PutMapping("/{id}")
     public ResponseEntity<Song10> updateSong(@PathVariable Long id, @RequestBody Song songDetails) {
         Optional<Song10> songOptional = songRepository.findById(id);
@@ -54,6 +75,11 @@ public class SongRestController {
         }
     }
 
+    /**
+     * curl -X DELETE http://host:port/songs/1
+     * @param id
+     * @return
+     */
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteSong(@PathVariable Long id) {
         if (songRepository.existsById(id)) {
