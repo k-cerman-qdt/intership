@@ -5,6 +5,7 @@ import org.kure.example10.database.SongRepository;
 import org.kure.example10.database.entities.Song10;
 import org.kure.example4.Song;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -27,6 +28,7 @@ public class SongRestController {
      * @return
      */
     @PostMapping
+    @Secured("ROLE_CREATOR")
     public Song10 createSong(@RequestBody Song10 song) {
         return songRepository.save(song);
     }

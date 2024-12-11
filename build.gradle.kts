@@ -12,6 +12,7 @@ repositories {
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter:3.4.0")
     implementation("org.springframework.boot:spring-boot-starter-web:3.4.0")
+    implementation("org.springframework.boot:spring-boot-starter-security:3.4.0")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.4.0")
     implementation("org.springframework:spring-web:6.2.0")
     implementation("org.hsqldb:hsqldb:2.7.4")
